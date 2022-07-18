@@ -1,0 +1,42 @@
+<h1>VER PEDIDOS</h1>
+<table style="width: 100%">
+  <tr>
+    <td>
+      <select name="select" style="width: 100%">
+        <option value="value1">Cliente...</option>
+        <option value="value2">Hector</option>
+        <option value="value3">Noelia</option>
+        <option value="value3">Facundo</option>
+      </select>
+    </td>
+    <td><input type="text" placeholder="fecha desde" /></td>
+    <td><input type="text" placeholder="fecha hasta" /></td>
+    <td><input type="text" placeholder="precio desde" /></td>
+    <td><input type="text" placeholder="precio hasta" /></td>
+    <td><button>Buscar</button></td>
+  </tr>
+</table>
+<br />
+<table
+  style="
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
+  "
+>
+  <tr style="background-color: gainsboro">
+    <td>numero</td>
+    <td>fecha</td>
+    <td>cliente</td>
+    <td>total</td>
+  </tr>
+  <tr *ngFor="let pe of pedidos">
+    <td>{{ pe.id }}</td>
+    <td>{{ pe.fecha }}</td>
+    <td>{{ getClient(pe.id_client) }}</td>
+    <td>{{ pe.total }}</td>
+  </tr>
+</table>
+<br />
+<app-resumepedidos></app-resumepedidos>

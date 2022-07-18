@@ -1,0 +1,26 @@
+<div
+  [style]="
+    'padding: 20px; min-height: 320px;' +
+    'max-width: 300px;' +
+    'border-radius: 5px;' +
+    'margin: 20px;' +
+    'float: left;' +
+    'background-color: ' +
+    color
+  "
+>
+  <img [src]="imagen" width="100%" /><br />
+  <h4>{{ nombreCat }} - {{ nombre }} - $ {{ precio }}</h4>
+
+  <table style="width: 200px; margin-left: auto; margin-right: auto">
+    <tr>
+      <td><button (click)="disminuir()">-</button></td>
+      <td>
+        <p>{{ cantidad }}</p>
+      </td>
+      <td><button (click)="aumentar()">+</button></td>
+    </tr>
+  </table>
+
+  <button (click)="editProd()">Editar</button>
+</div>

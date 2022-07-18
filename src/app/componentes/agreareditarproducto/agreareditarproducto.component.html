@@ -1,0 +1,25 @@
+<h1>{{ titulo }}</h1>
+<br />
+<div>{{ nombre }}</div>
+<input type="text" placeholder="Nombre" [(ngModel)]="nombre" />
+<br /><br />
+<select name="select" style="width: 100%" [(ngModel)]="id_categoria">
+  <option value="value1" selected>Categoria...</option>
+  <option *ngFor="let cat of categorias" [value]="cat.id">
+    {{ cat.nombre }}
+  </option>
+</select>
+<br /><br />
+<input type="text" placeholder="precio" [(ngModel)]="precio" />
+<br /><br />
+<table style="width: 100%">
+  <tr>
+    <td>
+      <button>
+        <a [routerLink]="['/home']" style="text-decoration: none">cancelar</a>
+      </button>
+    </td>
+
+    <td><button (click)="crearProducto()">crear/modificar</button></td>
+  </tr>
+</table>
